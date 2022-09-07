@@ -9,6 +9,10 @@ import java.util.Scanner;
 import java.util.Arrays;
 
 class Main {
+
+    /*
+     *  Creates the matrix
+     */
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         int n = in.nextInt();
@@ -20,11 +24,25 @@ class Main {
                 doubleArray[i][y] = in.nextInt();
             }
         }
+
+        /* 
+         *  Column swap
+         */
         int i = in.nextInt();
         int j = in.nextInt();
-        int[] temp = doubleArray[i];
-        doubleArray[i]= doubleArray[j];
-        doubleArray[j] = temp;
-        System.out.println(Arrays.deepToString(doubleArray));
+        for (int c = 0; c < doubleArray.length; c++) {   
+            int temp = doubleArray[c][i];
+            doubleArray[c][i] = doubleArray[c][j];
+            doubleArray[c][j] = temp;
+        }
+        
+        /*
+         *  Prints swapped matrix
+         */
+        for (int a = 0; a < doubleArray.length; a++) {
+            for (int b = 0; b < doubleArray[0].length; b++)
+                System.out.print(doubleArray[a][b] + " ");
+            System.out.println();
+        }
     }
 }
