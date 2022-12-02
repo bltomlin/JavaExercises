@@ -14,6 +14,9 @@ class Main {
         int h3 = scanner.nextInt();
 
         boolean descOrdered = h1 >= h2 && h2 >= h3;
-        System.out.println(descOrdered);
+        boolean ascOrdered = h1 <= h2 && h2 <= h3;
+        boolean check = ascOrdered || descOrdered;
+
+        System.out.println(check);
     }
 }
